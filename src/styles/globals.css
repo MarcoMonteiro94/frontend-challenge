@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+@font-face {
+  font-family: "SFProText";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("/fonts/SF-Pro-Text-Regular.woff2") format("woff2"),
+    url("/fonts/SF-Pro-Text-Regular.otf") format("otf");
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("/fonts/SF-Pro-Display-Regular.woff2") format("woff2"),
+    url("/fonts/SF-Pro-Display-Regular.otf") format("otf");
+}
+
+@font-face {
+  font-family: "SFProDisplay";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("/fonts/SF-Pro-Display-Bold.woff2") format("woff2"),
+    url("/fonts/SF-Pro-Display-Bold.otf") format("otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.rec .rec-slider-container {
+  margin: 0 5px;
+}
+
+.rec .rec-swipable {
+  align-items: center;
+}
