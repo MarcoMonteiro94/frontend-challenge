@@ -1,8 +1,10 @@
-import { ModalProps } from "../../types";
+import { useRouter } from "next/dist/client/router";
 import { HeaderSection } from "../HeaderSection";
 import * as S from "./styles";
 
-export function ReadingCategory({ setBookId, setModal }: ModalProps) {
+export function ReadingCategory() {
+  const router = useRouter();
+
   return (
     <S.Container>
       <HeaderSection title="Currently Reading" link="All" />
@@ -11,8 +13,7 @@ export function ReadingCategory({ setBookId, setModal }: ModalProps) {
           src="/images/originals-book.png"
           alt="Originals"
           onClick={() => {
-            setBookId("eLRhDgAAQBAJ");
-            setModal(true);
+            router.push("eLRhDgAAQBAJ");
           }}
         />
         <S.WrapperOval>

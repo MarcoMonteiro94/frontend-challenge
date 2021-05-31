@@ -1,18 +1,18 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { MenuDetail } from "../MenuDetail";
 import { SEARCH_BOOK } from "../../services/api";
 import { BookProps } from "../../types";
 import * as S from "./styles";
+import { useRouter } from "next/dist/client/router";
 
 type DetailModalProps = {
   id: string;
-  setBookId: Dispatch<SetStateAction<string>>;
-  setModal: Dispatch<SetStateAction<boolean>>;
 };
 
-export function DetailModal({ id, setBookId, setModal }: DetailModalProps) {
+export function DetailModal({ id }: DetailModalProps) {
   const [book, setBook] = useState<BookProps>({} as BookProps);
+  const router = useRouter();
   const { request } = useFetch();
 
   useEffect(() => {
@@ -36,8 +36,7 @@ export function DetailModal({ id, setBookId, setModal }: DetailModalProps) {
       <S.ImgWrapper>
         <button
           onClick={() => {
-            setBookId("");
-            setModal(false);
+            router.back();
           }}
         >
           <img src="/images/arrow-left.svg" alt="Sair" />

@@ -1,7 +1,8 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useRouter } from "next/dist/client/router";
+import { useEffect, useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { SEARCH_BOOK } from "../../services/api";
-import { BookProps, ModalProps } from "../../types";
+import { BookProps } from "../../types";
 import * as S from "./styles";
 
 type BannerBookProps = {
@@ -10,14 +11,9 @@ type BannerBookProps = {
   even: boolean;
 };
 
-export function BannerBook({
-  id,
-  selected,
-  even,
-  setBookId,
-  setModal,
-}: BannerBookProps & ModalProps) {
+export function BannerBook({ id, selected, even }: BannerBookProps) {
   const [book, setBook] = useState<BookProps>({} as BookProps);
+  const router = useRouter();
   const { request } = useFetch();
 
   useEffect(() => {
@@ -62,8 +58,7 @@ export function BannerBook({
           <S.TriangleDetail src="/images/triangle.svg" alt="Triangle" />
           <div
             onClick={() => {
-              setBookId(id);
-              setModal(true);
+              router.push(id);
             }}
           >
             <S.BookCover

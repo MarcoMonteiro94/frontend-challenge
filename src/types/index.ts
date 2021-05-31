@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
 
 export type BookProps = {
-  id: string;
-  etag: string;
+  id?: string;
+  etag?: string;
   volumeInfo: {
     imageLinks: {
       thumbnail: string;
@@ -11,9 +11,5 @@ export type BookProps = {
     authors: String[];
     description: string;
   };
-};
-
-export type ModalProps = {
-  setBookId: Dispatch<SetStateAction<string>>;
-  setModal: Dispatch<SetStateAction<boolean>>;
+  onClick: () => void;
 };
