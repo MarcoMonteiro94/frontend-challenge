@@ -1,16 +1,12 @@
 import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
 import { useDebounce } from "react-use";
-
 import { SEARCH_BOOKS } from "../../services/api";
-
 import { Main } from "../Main";
 import { SearchBox } from "../SearchBox";
 import { Book } from "../Book";
 import { Loading } from "../Loading";
-
 import { BookProps } from "../../types";
-
 import * as S from "./styles";
 import { useRouter } from "next/dist/client/router";
 
