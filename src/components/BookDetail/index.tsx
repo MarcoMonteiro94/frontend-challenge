@@ -6,18 +6,18 @@ import { BookProps } from "../../types";
 import * as S from "./styles";
 import { useRouter } from "next/dist/client/router";
 
-type DetailModalProps = {
-  id: string;
+type BookDetailProps = {
+  id: string | undefined;
 };
 
-export function DetailModal({ id }: DetailModalProps) {
+export function BookDetail({ id }: BookDetailProps) {
   const [book, setBook] = useState<BookProps>({} as BookProps);
   const router = useRouter();
   const { request } = useFetch();
 
   useEffect(() => {
     async function getBook() {
-      if (id.length > 0) {
+      if (id !== undefined) {
         const { url, options } = SEARCH_BOOK(id);
         try {
           const { json } = await request(url, options);
